@@ -16,7 +16,7 @@ protected: // klasy dziedziczace beda mialy dostep do zmiennej strand
     virtual void validate_sequence() = 0;
 public:
     SequenceBase(const std::string& seq) : strand(seq) { //konstruktur ustawiajacy nasza nic
-        for (size_t i = 0; i < strand.length(); ++i) {
+        for (int i = 0; i < strand.length(); ++i) {
             strand[i] = toupper(strand[i]);
         } // od razu zamiana na wielkie litery - piszemy sekwencje duzymi literami
     }
