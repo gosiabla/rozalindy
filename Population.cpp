@@ -10,7 +10,7 @@
 MendelProbabilityCalculator::MendelProbabilityCalculator(int k_, int m_, int n_)
         : k(k_), m(m_), n(n_) {}
 
-float calculate_probability(int k,int m,int n)  {
+float MendelProbabilityCalculator::calculate_probability(int k,int m,int n)  {
     int total = k + m + n;
     float prob = 0.0;
 
