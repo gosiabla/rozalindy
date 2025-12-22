@@ -14,7 +14,7 @@ int main() {
     // dna
     DNASequence dna1("ATCGATACGTACGCAACT");
     DNASequence dna2("ATGGATGACTGACTTACG");
-    DNASequence dna("GDATCGATACGTACGCAACB");  //celowa pomylka w sekwencji
+    //DNASequence dna("GDATCGATACGTACGCAACB");  //celowa pomylka w sekwencji
 
     cout << "DNA1 - dlugosc: " << dna1.length() << endl;
     cout << "DNA2 - dlugosc: " << dna2.length() << endl;
@@ -36,10 +36,12 @@ int main() {
 
     //populacja krolikow
     RabbitPopulationModel kroliki(2);
-
+    cout << kroliki.calculate_population(12) <<endl;
     //mendel
     MendelProbabilityCalculator mendel(4,3,2);
-
+    cout << mendel.calculate_probability() <<endl;
     //kmery
     Kmers kmery("TCAGTACGACTCGATCGATCGATCG",4);
+    kmery.znajdzkmery();
+    kmery.wyswietlkmery();
 }
