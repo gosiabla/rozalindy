@@ -9,29 +9,26 @@
 #include <iostream>
 #include <map>
 // klasa fundament dla innych klas. klasa abstrakcyjna. uzywana tylko do klas pochodnych. nie moge jej
-//samej zimplementowac
+
 class SequenceBase {
-protected: // klasy dziedziczace beda mialy dostep do zmiennej strand
-    std::string strand; // ale z zewnatrz nie bedzie do niej dostepu
+protected: 
+    std::string strand; 
     virtual void validate_sequence() = 0;
 public:
-    SequenceBase(const std::string& seq) : strand(seq) { //konstruktur ustawiajacy nasza nic
+    SequenceBase(const std::string& seq) : strand(seq) {
         for (int i = 0; i < strand.length(); ++i) {
             strand[i] = toupper(strand[i]);
-        } // od razu zamiana na wielkie litery - piszemy sekwencje duzymi literami
+        } 
     }
 
-    virtual ~SequenceBase() = default;  //destruktor, ktory usunie i wartosci z klasy pochodnej, jak
-    //i bazowej
+    virtual ~SequenceBase() = default; 
 
-    virtual std::string Count_nucleotides() const = 0;  //rowniez wirtualna metoda nie zaimplementowana
-    // poniewaz w RNA mamy U a w DNA T.
+    virtual std::string Count_nucleotides() const = 0; 
 
     virtual int length() {
         return strand.length();
-    } // tutaj jest uniwersalnie - wiec juz jest zaimplementowana.
-
-    virtual void print() { // do wyswietlania - tez uniwersalnie
+    } 
+    virtual void print() { 
         std::cout << "Sequence: " << strand << std::endl;
     }
 
